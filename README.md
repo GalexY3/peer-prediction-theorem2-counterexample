@@ -2,6 +2,8 @@
 
 **Contents.** This archive contains a machine-checked counterexample to Theorem 2 of Qiu, Carroll and Allen, "Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction" (ICLR 2026, arXiv:2601.20299). It includes the note, the Lean proofs, the exact-check script, the results and the preregistration.
 
+**DOI.** [10.5281/zenodo.24517882](https://doi.org/10.5281/zenodo.24517882) (Zenodo, version v1.0.0).
+
 **Author.** Alejandro Panera Pascual (Universidad de Salamanca), ORCID 0009-0008-5194-7399.
 
 **Scope.** Peer prediction for language models, its construction, Theorem 2 and the experiments are the work of Qiu, Carroll and Allen. This archive examines only Theorem 2, the heterogeneous-prior guarantee. Theorem 1 (common prior) is not affected.
