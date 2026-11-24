@@ -1,0 +1,43 @@
+{
+  "title": "Larger Crowds Do Not Restore Truthfulness in Peer Prediction with Heterogeneous Priors: A Machine-Checked Counterexample to Theorem 2 of Qiu, Carroll and Allen (ICLR 2026)",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Panera Pascual, Alejandro",
+      "affiliation": "Universidad de Salamanca",
+      "orcid": "0009-0008-5194-7399"
+    }
+  ],
+  "description": "Qiu, Carroll and Allen (ICLR 2026) propose peer prediction for evaluating and training language models without ground truth: a participant's answer is scored by how much it helps a crowd of expert models predict the answers of the other participants. Their Theorem 2 states that, when the priors of participants and experts are drawn independently from a common distribution and the numbers of experts and participants are large, honest reporting is with high probability an epsilon-Bayesian Nash equilibrium. We show that this statement is false. In a two-type population with binary answers (90% latent-truth priors, 10% independent priors), a participant with the minority prior gains at least 0.487 nats per target by reporting 0 when its answer is 1, and at least 0.097 averaged over its own answer, for every fraction of majority-type experts in [4/5, 1]; the gain does not depend on the numbers of experts or participants, and Assumption 1 of the theorem holds. The profitable deviation, always answering 0, is uninformative. We also refute the weaker reading in which deviations cannot depend on the participant's own prior, using non-exchangeable priors (gain at least 0.127 ex ante), and locate the gaps in the proof: an arithmetic average of expert probabilities is replaced by a geometric mean of priors, and the passage to finite n averages over the deviating participant's own prior. The key inequalities are machine-checked in Lean 4 with Mathlib, with statements preregistered before the proofs were written; an exact brute-force computation for n <= 4 matches the closed forms. Theorem 1 (common prior), the experiments and the method are the work of Qiu, Carroll and Allen and are not evaluated here.",
+  "keywords": [
+    "peer prediction",
+    "mechanism design",
+    "incentive compatibility",
+    "heterogeneous priors",
+    "Bayesian Nash equilibrium",
+    "Goodhart's law",
+    "LLM evaluation",
+    "scalable oversight",
+    "Lean 4",
+    "formal verification"
+  ],
+  "license": "CC-BY-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "arXiv:2601.20299",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "https://openreview.net/forum?id=mdw0vvRBEL",
+      "relation": "references",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1145/3565560",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
+}

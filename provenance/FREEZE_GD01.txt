@@ -1,0 +1,7 @@
+FREEZE GD01 (24/11/2026, portatil, ala A10). Antes de escribir las pruebas de Lean y de la ejecucion definitiva de gd01_exact.py.
+
+3390bb4edbb5a9e98c87a47f7f220f06e0877d33966a3ff0864d86d8bd847721  TEORIA_GD01.md
+047ff182bb80d935e0a8f48ed42ee21014cf1f39fc7829e7720619ad5102797f  PREREG_GD01.md
+9831336f10bc466706b7e90df48e3c3582096702222c8738399de230519063dc  gd01_exact.py
+
+Fuente auditada: arXiv 2601.20299 v1 (28/01/2026), ICLR 2026. Sondeo: novelty/2026-11-24_scout_goodhart/ (fuera de git).

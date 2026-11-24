@@ -1,0 +1,9 @@
+lake env lean AaNash/PeerPredictionGD01.lean  (2026-11-24T19:51:17Z)
+sha256 61baafb93ee3b071c06328fbf7e819358f38791c08523a5ddd5e1bc8a8f6548a
+'AaNash.GD01.caseA_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AaNash.GD01.caseA_c0_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AaNash.GD01.caseB_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AaNash.GD01.caseB_c1_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AaNash.GD01.caseB_mixture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AaNash.GD01.alg1_caseA_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0
