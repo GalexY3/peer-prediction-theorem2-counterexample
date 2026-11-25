@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "Larger Crowds Do Not Restore Truthfulness in Peer Prediction with Heterogeneous Priors: A Machine-Checked Counterexample to Theorem 2 of Qiu, Carroll and Allen (ICLR 2026)"
+title: "Larger Crowds Do Not Restore Truthfulness in Peer Prediction with Heterogeneous Priors: A Counterexample to Theorem 2 of Qiu, Carroll and Allen (ICLR 2026), with Machine-Checked Inequalities"
 authors:
   - family-names: "Panera Pascual"
     given-names: "Alejandro"
     affiliation: "Universidad de Salamanca"
     orcid: "https://orcid.org/0009-0008-5194-7399"
+version: "1.0.1"
 date-released: 2026-11-25
 license: CC-BY-4.0
 doi: "10.5281/zenodo.24517882"

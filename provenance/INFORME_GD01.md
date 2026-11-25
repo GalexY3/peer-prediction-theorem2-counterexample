@@ -127,3 +127,59 @@ Al redactar el mensaje a los autores se precisa la magnitud del caso A. El contr
 - El caso B ya era ex ante, promediado: c₁ ≈ 0,127.
 
 **Borrador de mensaje a los autores** (no enviado): `MENSAJE_AUTORES_BORRADOR.md`.
+
+## Adenda (25/11/2026): nota técnica publicada en Zenodo
+
+Publicada por autorización expresa del usuario («Ambas, zenodealo», 24/11).
+
+- **Nota técnica** en inglés (6 pp.): `publication/gd01_note/`.
+- **Repositorio público:** https://github.com/GalexY3/peer-prediction-theorem2-counterexample, release v1.0.0.
+- **DOI:** 10.5281/zenodo.24517882.
+
+**Comprobaciones del paquete:**
+- `PeerPredictionGD01.lean` y `gd01_exact.py` son byte a byte los congelados (SHA-256 61baafb9… y 9831336f…).
+- El script, ejecutado desde el paquete, reproduce `gd01_exact.json` sin diferencias.
+
+**Correcciones hechas al redactar la nota:**
+- **I₀** = log(25/9) ≈ 1,02 (antes no se había escrito en forma cerrada).
+- **Umbral para ε = c₀/2:** su valor exacto es 493,2, así que el primer entero que lo cumple es 494.
+- **Cadena descriptiva de V6:** en el script congelado dice «más de c₀». La diferencia calculada es 0,138, que supera c₀/5 pero no c₀. El README del paquete lo anota.
+
+**Pendiente:**
+- El usuario decide si envía el mensaje a los autores (`MENSAJE_AUTORES_BORRADOR.md`, ya con el DOI). Nadie ha contactado con ellos.
+- Una lectura experta independiente.
+
+## Adenda (25/11/2026): auditoría adversarial y versión 1.0.1 de la nota
+
+**Método:** skill `proof-audit`.
+- Una codificación nueva escrita desde la nota (todos los pares, n ≤ 5).
+- Dos lectores independientes (subagentes) que solo vieron la nota, el `.lean` y el artículo: S1 revisó la fidelidad al artículo; S2, las cuentas y el Lean.
+- La sesión principal volvió a verificar cada hallazgo.
+- Informe calculado: INVALID (final), por un único hallazgo grave que está en la §5 de la nota y no en el contraejemplo. Copia en `AUDITORIA_GD01_20261125.md`.
+
+**Lo que se confirma:**
+- Los contraejemplos A y B y todas sus cifras.
+- El Supuesto 1, comprobado también con los pares hoja–hoja del caso B.
+- La lectura I′, en la que el pago promedia sobre el sorteo del propio prior: también la refuta 𝒟_A, con una ganancia de al menos c₀/50 ≈ 0,0097.
+
+**Lo que cambia:**
+1. **Normalización.**
+   - La prueba del artículo divide entre (n−1)m en (17), (18) y (22), y entre n−1 en (19)–(21).
+   - Con el 1/((n−1)m) literal, el Teorema 2 es **trivialmente cierto** para toda 𝒟: ninguna desviación gana más de 2I₀/m, que queda por debajo de ε en el umbral.
+   - La conclusión correcta es: **el Teorema 2 es falso con la normalización que usa su prueba, o trivial con la que imprimen (17) y (22). En ningún caso la prueba lo establece.**
+2. **Sección 5 de la v1.0.0: INVALID en la ilustración.**
+   - Las cifras 0,0196 frente a −0,0158 cumplen (19).
+   - El hueco decisivo es otro: la sustitución del prior de la fuente por 𝒫̄, en (19)=(20) y (21). Con f = 1 no hay hueco de Jensen y la desviación gana 0,910.
+   - El paso de Hoeffding es secundario. Falla en (21)→(22) (0,1574 frente a 0,1315) y, para una fuente Lat, en (19) (0,2180 frente a 0,2245).
+3. **Precisiones menores:**
+   - 494 solo refuta la lectura *interim*;
+   - el vector [0,1]^{n|𝒜|} y la condición i ≠ j del Supuesto 1;
+   - el Algoritmo 1 incluye t = s y queda fuera del Teorema 2;
+   - la atribución de «penalizes … uninformative» al Teorema 1;
+   - el título dice ahora «with Machine-Checked Inequalities».
+
+**v1.0.1:** preparada en `publication/gd01_note/` (8 pp.), con el paquete actualizado y el borrador del mensaje adaptado. **No se ha publicado:** espera la autorización del usuario.
+
+**Grado:** sin cambios, 1/3 y candidato a 2/3\*. La auditoría interna no sustituye a una lectura experta externa.
+
+**Sondeo GD02 (25/11), sobre la propagación del fallo:** ningún trabajo posterior usa el Teorema 2. Detalle en `novedad/sondeo_gd02_propagacion.md`.

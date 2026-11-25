@@ -1,6 +1,8 @@
 # Larger Crowds Do Not Restore Truthfulness in Peer Prediction with Heterogeneous Priors
 
-**Contents.** This archive contains a machine-checked counterexample to Theorem 2 of Qiu, Carroll and Allen, "Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction" (ICLR 2026, arXiv:2601.20299). It includes the note, the Lean proofs, the exact-check script, the results and the preregistration.
+**Version 1.0.1** (25 November 2026). It corrects Section 5 of v1.0.0 and adds the normalization result after an adversarial audit by two independent readers. The counterexamples and their numbers are unchanged. See "Changes from version 1.0.0" at the end of the note.
+
+**Contents.** This archive contains a counterexample, with machine-checked inequalities, to Theorem 2 of Qiu, Carroll and Allen, "Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction" (ICLR 2026, arXiv:2601.20299). It includes the note, the Lean proofs, the exact-check script, the results and the preregistration.
 
 **DOI.** [10.5281/zenodo.24517882](https://doi.org/10.5281/zenodo.24517882) (Zenodo, version v1.0.0).
 
@@ -12,12 +14,13 @@
 
 | Path | What it is |
 |---|---|
-| `paper/main.pdf`, `paper/main.tex` | The note (6 pages) |
+| `paper/main.pdf`, `paper/main.tex` | The note (8 pages, version 1.0.1) |
 | `lean/PeerPredictionGD01.lean` | Lean 4 + Mathlib proofs: `caseA_gain`, `caseA_c0_pos`, `caseB_gain`, `caseB_c1_pos`, `caseB_mixture`, `alg1_caseA_pos` |
 | `lean/LEAN_AXIOMS_GD01.txt` | Compilation receipt: `#print axioms` shows only `propext`, `Classical.choice` and `Quot.sound`; no `sorry`; SHA-256 of the Lean file |
 | `code/gd01_exact.py` | Exact checks V1–V6: brute force over all answer profiles for n = 2, 3, 4 with rational arithmetic, Assumption 1 constants, binomial probabilities, theorem threshold, step (19) |
 | `results/` | Frozen outputs `gd01_exact.json` and `gd01_exact_stdout.txt` |
 | `provenance/` | Theory, preregistration with the exact Lean statements, SHA-256 freeze, and report with addenda. In Spanish. The freeze (commit 7350872f of the author's private research repository) was made before the proofs were written |
+| `provenance/AUDIT_GD01_20261125.md` | Adversarial audit of version 1.0.0 (computed verdicts plus a Spanish narrative) that led to version 1.0.1 |
 
 ## Reproduce
 
@@ -43,6 +46,13 @@ The output should match `results/gd01_exact.json`.
 
 ## Main numbers
 
+**Normalization.**
+- The proof of Theorem 2 divides the score by (n−1)m in its equations (17), (18) and (22), and by n−1 in (19)–(21).
+- With the literal 1/((n−1)m), the statement holds for every 𝒟 for a trivial reason: no deviation can gain more than 2I₀/m, which is below ε at the theorem's threshold (Lemma 2 of the note).
+- With the normalization the proof uses, the statement is false.
+- So Theorem 2 is either false or trivial.
+
+
 **Case A (each participant knows its own prior).** 𝒟 = 0.9·Lat + 0.1·Ind with binary answers:
 - **Lat:** a latent truth Z ~ Bern(1/2), with each answer equal to Z with probability 9/10.
 - **Ind:** answers i.i.d. Bern(1/5).
@@ -61,6 +71,7 @@ The output should match `results/gd01_exact.json`.
 - **INFORME_GD01.md.** Its main text states the failure "for every ε < 0.487". That holds for the interim reading, conditional on the participant's own answer. A dated addendum in the same file, reproduced in the note, gives the averaged bound c₀/5 ≈ 0.097.
 - **Threshold for ε = c₀/2.** The value is 493.2, so the smallest integer that meets it is 494.
 - **`gd01_exact.py`, V6.** The frozen script contains a descriptive string saying that the deviation beats honesty "by more than c₀". The computed gap at f = 9/10 is 0.138, which exceeds c₀/5 but not c₀. The numbers in the JSON are correct; only the string is imprecise.
+- **Version 1.0.0** (DOI 10.5281/zenodo.24517882). Its Section 5 illustrated step (19) of the proof with numbers that satisfy that step, and it listed the Hoeffding step first. Version 1.0.1 identifies the decisive gap as the replacement of the source's prior by the experts' aggregate, at steps (19)=(20) and (21). It gives the failure of the Hoeffding passage at (21)→(22), and at (19) for a majority-type source.
 - **Published version.** The statement of Theorem 2 and the proof steps discussed were checked against both arXiv:2601.20299v1 and the published OpenReview version (forum mdw0vvRBEL), and are the same in both.
 
 ## License
