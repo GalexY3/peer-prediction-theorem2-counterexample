@@ -4,7 +4,7 @@
 
 **Contents.** This archive contains a counterexample, with machine-checked inequalities, to Theorem 2 of Qiu, Carroll and Allen, "Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction" (ICLR 2026, arXiv:2601.20299). It includes the note, the Lean proofs, the exact-check script, the results and the preregistration.
 
-**DOI.** [10.5281/zenodo.24517882](https://doi.org/10.5281/zenodo.24517882) (Zenodo, version v1.0.0).
+**DOI.** All versions: [10.5281/zenodo.24517881](https://doi.org/10.5281/zenodo.24517881). Version 1.0.1: [10.5281/zenodo.24518756](https://doi.org/10.5281/zenodo.24518756). Version 1.0.0: [10.5281/zenodo.24517882](https://doi.org/10.5281/zenodo.24517882).
 
 **Author.** Alejandro Panera Pascual (Universidad de Salamanca), ORCID 0009-0008-5194-7399.
 
